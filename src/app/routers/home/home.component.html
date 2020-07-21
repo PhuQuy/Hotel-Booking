@@ -1,0 +1,160 @@
+<div class="container">
+  <div class="title">
+    <h3>Home</h3>
+    <div class="user">
+      <h3>Starbuck Coffee Trading Sarl
+        <span>John Mayers</span></h3>
+      <div class="avatar">
+        <img src="/assets/images/profile.png" alt="profile">
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <form class="row mb-2 search-form">
+      <div class="form-group col-lg-3 col-md-6 col-sm-12">
+        <label>Room's Number</label>
+        <input type="email" class="form-control" placeholder="115622">
+      </div>
+      <div class="form-group col-lg-3 col-md-6 col-sm-12">
+        <label>Origin</label>
+        <div class="selectCustom">
+          <!-- <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+          </div> -->
+          <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+            <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor
+              (focus)="myDrop.open()">Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+              <button ngbDropdownItem>Action - 1</button>
+              <button ngbDropdownItem>Another Action</button>
+              <button ngbDropdownItem>Something else is here</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-lg-3 col-md-6 col-sm-12">
+        <label>Cilent's Ref</label>
+        <input type="email" class="form-control" placeholder="115622">
+      </div>
+      <div class="form-group col-lg-3 col-md-6 col-sm-12 justify-content-end">
+        <label style="opacity: 0; margin-bottom: 11px;" class="d-none d-md-block">button</label>
+        <div class="row justify-content-end">
+          <div class="col-lg-6 col-md-6 col-6">
+            <button type="submit" class="btn btnPrimary">Search</button>
+          </div>
+          <div class="col-lg-6 col-md-6 col-6">
+            <button type="submit" class="btn btnOutline">Clear</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="table-responsive">
+      <table id="example" class="table table-custom mb-0">
+        <thead>
+          <tr>
+            <th style="width: 20%;">Room's Number</th>
+            <th>Floor</th>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let room of rooms; let i = index">
+            <td class="color1">{{ room.floor  + ' - ' + room.roomName}}</td>
+            <td class="color2">{{room.floor}}</td>
+            <td>
+              <span class="room-type" [class.bussiness]="room.type === 'Buisness Room'">
+                {{room.type}}
+              </span>
+            </td>
+            <td>
+              <div class="status" [ngClass]="getRoomStatus(room.status)">{{room.status}}</div>
+            </td>
+          </tr>
+          <!-- <tr onclick="location.href='dashboad.html'">
+            <td class="color1">1175472</td>
+            <td class="color2">1175472</td>
+            <td>VIE-EPW 15/16 CP</td>
+            <td>Apr 2020</td>
+            <td>7360</td>
+            <td>
+              <div class="status status-apr">Approved<span class="note">3</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="color1">1175472</td>
+            <td class="color2">1175472</td>
+            <td>VIE-EPW 15/16 CP</td>
+            <td>Apr 2020</td>
+            <td>7360</td>
+            <td>
+              <div class="status status-pending">Pending<span class="note">3</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="color1">1175472</td>
+            <td class="color2">1175472</td>
+            <td>VIE-EPW 15/16 CP</td>
+            <td>Apr 2020</td>
+            <td>7360</td>
+            <td>
+              <div class="status status-going">Going<span class="note">3</span></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="color1">1175472</td>
+            <td class="color2">1175472</td>
+            <td>VIE-EPW 15/16 CP</td>
+            <td>Apr 2020</td>
+            <td>7360</td>
+            <td>
+              <div class="status status-apr">Approved</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="color1">1175472</td>
+            <td class="color2">1175472</td>
+            <td>VIE-EPW 15/16 CP</td>
+            <td>Apr 2020</td>
+            <td>7360</td>
+            <td>
+              <div class="status status-pending">Pending</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="color1">1175472</td>
+            <td class="color2">1175472</td>
+            <td>VIE-EPW 15/16 CP</td>
+            <td>Apr 2020</td>
+            <td>7360</td>
+            <td>
+              <div class="status status-going">Going<span class="note">3</span></div>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <div class="paginationCustom mt-4">
+      <span>Showing 1 to 25 of 57 entries</span>
+      <ul class="pagination">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><i data-feather="chevron-left"></i></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active" aria-current="page">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#"><i data-feather="chevron-right"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>

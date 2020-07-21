@@ -1,0 +1,20 @@
+@import 'src/assets/scss/app-variables';
+
+::ng-deep {
+  .dropdown-toggle::after {
+    vertical-align: text-top !important;
+  }
+}
+
+.room-type {
+  border: 2px solid $colorPrimary;
+  border-radius: 20px;
+  padding: 5px 10px;
+  color: $colorPrimary;
+  font-weight: bold;
+
+  &.bussiness {
+    color: $orangeColor !important;
+    border-color: $orangeColor !important;
+  }
+}

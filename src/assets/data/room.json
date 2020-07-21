@@ -1,0 +1,36 @@
+[{
+  "roomName": "1",
+  "floor": 1,
+  "type": "Economy Room",
+  "status": "In Use"
+}, {
+  "roomName": "2",
+  "floor": 1,
+  "type": "Buisness Room",
+  "status": "In Use"
+}, {
+  "roomName": "3",
+  "floor": 1,
+  "type": "Economy Room",
+  "status": "In Use"
+}, {
+  "roomName": "4",
+  "floor": 2,
+  "type": "Economy Room",
+  "status": "Available"
+}, {
+  "roomName": "5",
+  "floor": 2,
+  "type": "Economy Room",
+  "status": "Available"
+}, {
+  "roomName": "6",
+  "floor": 3,
+  "type": "Economy Room",
+  "status": "In Use"
+}, {
+  "roomName": "7",
+  "floor": 3,
+  "type": "Buisness Room",
+  "status": "Available"
+}]
