@@ -3,11 +3,12 @@
     <img src="/assets/images/logo.png" alt="logo">
   </a>
   <div class="list-group">
-    <a href="#" class="active">
+    <a  [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:
+        true}">
       <i data-feather="home"></i> Home</a>
     <a href="#">
       <i data-feather="pie-chart"></i> Dashboard</a>
-    <a href="#">
+    <a [routerLink]="['/report']" [routerLinkActive]="['active']">
       <i data-feather="file"></i>Reports</a>
     <a href="#">
       <i data-feather="info"></i>About

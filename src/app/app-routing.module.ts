@@ -10,6 +10,11 @@ const routes: Routes = [
         loadChildren: () => import('@routers/home/home.module').then(mod => mod.HomeModule)
     },
     {
+        path: 'report',
+        component: MainLayoutComponent,
+        loadChildren: () => import('@routers/report/report.module').then(mod => mod.ReportModule)
+    },
+    {
         path: '**',
         redirectTo: ''
     }
